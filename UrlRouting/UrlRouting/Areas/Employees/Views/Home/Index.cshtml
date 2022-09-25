@@ -1,0 +1,28 @@
+﻿@using UrlRouting.Areas.Employees.Models
+@model Workers[]
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Routing</title>
+</head>
+<body>
+    <table style="border: 1px solid black;">
+        <tr>
+            <th>Full Name</th>
+            <th>Occupation</th>
+            <th>Salary</th>
+        </tr>
+        @foreach (Workers w in Model)
+        {
+            <tr>
+                <td>@w.FullName</td>
+                <td>@w.Occupation</td>
+                <td>@string.Format("{0:C}", @w.Salary)</td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
